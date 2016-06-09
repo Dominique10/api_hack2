@@ -17,7 +17,7 @@ $(document).ready(function(){
 		url = "http://gateway.marvel.com/v1/public/characters?name=daredevil";
 		$.getJSON(url,params,function(data){
 			console.log(data.data);
-			//showSearchResults(data.items);
+			console.log(data.results[0].description);
 		});
 });
 
