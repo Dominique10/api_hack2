@@ -42,7 +42,7 @@ function getComics(idNumber){
 		comicsInformation = data2.data.results;
 		for (var i =0; i < comicsInformation.length; i++) {
 			var heroDetails =getHeroComicSelection(comicsInformation,i);
-			$('results').append(heroDetails);
+			$('.results').append(heroDetails);
 			// console.log("Title "+comicsInformation[i].title);
 			// console.log("Description "+comicsInformation[i].description);
 
