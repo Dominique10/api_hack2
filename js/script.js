@@ -14,6 +14,7 @@ $(document).ready(function(){
 			//console.log(data.data);
 			console.log(data.data.results[0]);
 			idNumber= data.data.results[0];
+			console.log(data.data.results[0].comics.items[0]);
 		});
 		url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 		$.getJSON(url2,params,function(data2){
