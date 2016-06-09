@@ -14,7 +14,8 @@ $(document).ready(function(){
 		$.getJSON(url,params,function(data){
 			//console.log(data.data);
 			console.log(data.data.results[0]);
-			idNumber = data.data.results[0];
+			console.log(data.data.results[0].id);
+			idNumber = data.data.results[0].id;
 			console.log(data.data.results[0].comics.items[0]);
 			comics = data.data.results[0].comics.items[0];
 
