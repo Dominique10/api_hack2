@@ -60,6 +60,8 @@ function getComics(idNumber){
 
 			var coverElem = result.find('.cover img');
 			coverElem.attr('src', comicCover);
+
+			return result;
 		};
 	});
 }
