@@ -1,6 +1,6 @@
 var userSelection;
 var idNumber=0;
-var comics;
+var comicsInformation;
 
 var params={
 			apikey: '9dcb20f1185fa9fc6ead79c1ce2be593'
@@ -45,12 +45,13 @@ function getComics(idNumber){
 		// console.log("Description "+data2.data.results[0].description);
 		// console.log("resourceURL "+data2.data.results[0].resourceURL);
 		// console.log("resourceURL "+data2.data.results[0].urls[0].url);
-		for (var i =0,i < data2.data.results.length - 1; i++) {
+		comicsInformation = data2.data.results;
+		for (var i =0,i < comicsInformation.length - 1, i++) {
 			//data2.data.results[i];
-			console.log("Title "+data2.data.results[i].title);
-			console.log("Description "+data2.data.results[i].description);
+			console.log("Title "+comicsInformation[i].title);
+			console.log("Description "+comicsInformation[i].description);
 			//console.log("resourceURL "+data2.data.results[i].resourceURL);
-			console.log("resourceURL "+data2.data.results[i].urls[0].url);
-		}
+			console.log("resourceURL "+comicsInformation[i].urls[0].url);
+		};
 	});
 }
