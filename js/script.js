@@ -41,12 +41,13 @@ function getMarvelHero(){
 function getComics(idNumber){
 	url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 	$.getJSON(url2,params,function(data2){
-		// console.log("Title "+data2.data.results[0].title);
+		 console.log("Title "+data2.data.results[0].title);
+		 console.log(data2.data.results);
 		// console.log("Description "+data2.data.results[0].description);
 		// console.log("resourceURL "+data2.data.results[0].resourceURL);
 		// console.log("resourceURL "+data2.data.results[0].urls[0].url);
 		comicsInformation = data2.data.results;
-		for (var i =0,i < comicsInformation.length - 1, i++) {
+		for (var i =0; i < comicsInformation.length; i++) {
 			//data2.data.results[i];
 			console.log("Title "+comicsInformation[i].title);
 			console.log("Description "+comicsInformation[i].description);
