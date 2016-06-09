@@ -41,7 +41,7 @@ function getComics(idNumber){
 
 		comicsInformation = data2.data.results;
 		for (var i =0; i < comicsInformation.length; i++) {
-			var heroDetails =getHeroComicSelection(comicsInformation);
+			var heroDetails =getHeroComicSelection(comicsInformation,i);
 			$('results').append(heroDetails);
 			// console.log("Title "+comicsInformation[i].title);
 			// console.log("Description "+comicsInformation[i].description);
@@ -75,7 +75,7 @@ function getComicCover(comicCode){
 	});
 }
 
-function getHeroComicSelection(comicSelection){
+function getHeroComicSelection(comicSelection,i){
 	console.log("Title "+comicSelection[i].title);
 			console.log("Description "+comicSelection[i].description);
 
