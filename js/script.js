@@ -41,27 +41,28 @@ function getComics(idNumber){
 
 		comicsInformation = data2.data.results;
 		for (var i =0; i < comicsInformation.length; i++) {
+			var heroDetails =getHeroComicSelection(comicsInformation);
+			$('results').append(heroDetails);
+			// console.log("Title "+comicsInformation[i].title);
+			// console.log("Description "+comicsInformation[i].description);
 
-			console.log("Title "+comicsInformation[i].title);
-			console.log("Description "+comicsInformation[i].description);
+			// console.log("resourceURL "+comicsInformation[i].urls[0].url);
+			// getComicCover(comicsInformation[i].id);
 
-			console.log("resourceURL "+comicsInformation[i].urls[0].url);
-			getComicCover(comicsInformation[i].id);
-
-			var result = $('.templates .title').clone();
+			// var result = $('.templates .title').clone();
 	
-			// Set the title properties in result
-			var titleElem = result.find('.title-text a');
-			titleElem.attr('href', comicsInformation[i].urls[0].url);
-			titleElem.text(comicsInformation[i].title);
+			// // Set the title properties in result
+			// var titleElem = result.find('.title-text a');
+			// titleElem.attr('href', comicsInformation[i].urls[0].url);
+			// titleElem.text(comicsInformation[i].title);
 
-			var descriptionElem = result.find('.description');
-			descriptionElem.text(comicsInformation[i].description);
+			// var descriptionElem = result.find('.description');
+			// descriptionElem.text(comicsInformation[i].description);
 
-			var coverElem = result.find('.cover img');
-			coverElem.attr('src', comicCover);
+			// var coverElem = result.find('.cover img');
+			// coverElem.attr('src', comicCover);
 
-			return result;
+			// return result;
 		};
 	});
 }
@@ -72,4 +73,27 @@ function getComicCover(comicCode){
 		console.log(data3.data.results[0]);
 		comicCover = data3.data.results[0].images[0].path +".jpg";
 	});
+}
+
+function getHeroComicSelection(comicSelection){
+	console.log("Title "+comicSelection[i].title);
+			console.log("Description "+comicSelection[i].description);
+
+			console.log("resourceURL "+comicSelection[i].urls[0].url);
+			getComicCover(comicSelection[i].id);
+
+			var result = $('.templates .title').clone();
+	
+			// Set the title properties in result
+			var titleElem = result.find('.title-text a');
+			titleElem.attr('href', comicSelection[i].urls[0].url);
+			titleElem.text(comicSelection[i].title);
+
+			var descriptionElem = result.find('.description');
+			descriptionElem.text(comicSelection[i].description);
+
+			var coverElem = result.find('.cover img');
+			coverElem.attr('src', comicCover);
+
+			return result;
 }

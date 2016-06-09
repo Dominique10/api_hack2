@@ -3,9 +3,9 @@
 	width: 600px;
 }
 
-// .hidden {
-// 	display: none;
-// }
+.hidden {
+	display: none;
+}
 
 .left {
 	float: left;
