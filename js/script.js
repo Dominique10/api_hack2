@@ -1,14 +1,14 @@
 var userSelection;
 var idNumber=0;
 var comicsInformation;
-
+var input;
 var params={
 			apikey: '9dcb20f1185fa9fc6ead79c1ce2be593'
 			
 		};
 
 $(document).ready(function(){
-	getMarvelHero();
+	//getMarvelHero(input);
 	
 		// url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 		// $.getJSON(url2,params,function(data2){
@@ -19,10 +19,16 @@ $(document).ready(function(){
 		// });
 });
 
+$('#myForm').submit(function(e){
+	e.preventDefault();
+	input = $(this).find("input[name='userinput']").val();
+	console.log(input);
+	getMarvelHero(input);
+})
 //http://gateway.marvel.com:80/v1/public/characters?name=daredevil&apikey=9dcb20f1185fa9fc6ead79c1ce2be593
 
-function getMarvelHero(){
-	url = "http://gateway.marvel.com/v1/public/characters?name=daredevil";
+function getMarvelHero(hero){
+	url = "http://gateway.marvel.com/v1/public/characters?name="+hero;
 	$.getJSON(url,params,function(data){
 		//console.log(data.data);
 		console.log(data.data.results[0]);
