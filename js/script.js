@@ -67,20 +67,20 @@ function getComics(idNumber){
 	});
 }
 
-function getComicCover(comicCode){
-	url3= "http://gateway.marvel.com/v1/public/comics/"+comicCode;
-	$.getJSON(url3,params,function(data3){
-		console.log(data3.data.results[0]);
-		comicCover = data3.data.results[0].images[0].path +".jpg";
-	});
-}
+// function getComicCover(comicCode){
+// 	url3= "http://gateway.marvel.com/v1/public/comics/"+comicCode;
+// 	$.getJSON(url3,params,function(data3){
+// 		console.log(data3.data.results[0]);
+// 		comicCover = data3.data.results[0].images[0].path +".jpg";
+// 	});
+// }
 
 function getHeroComicSelection(comicSelection,i){
 	console.log("Title "+comicSelection[i].title);
 			console.log("Description "+comicSelection[i].description);
 
 			console.log("resourceURL "+comicSelection[i].urls[0].url);
-			getComicCover(comicSelection[i].id);
+			//getComicCover(comicSelection[i].id);
 
 			var result = $('.templates .title').clone();
 	
@@ -92,8 +92,18 @@ function getHeroComicSelection(comicSelection,i){
 			var descriptionElem = result.find('.description');
 			descriptionElem.text(comicSelection[i].description);
 
-			var coverElem = result.find('.cover img');
-			coverElem.attr('src', comicCover);
+			
+
+			//function getComicCover(comicCode){
+			url3= "http://gateway.marvel.com/v1/public/comics/"+comicSelection[i].id;
+			$.getJSON(url3,params,function(data3){
+				console.log(data3.data.results[0].images[0].path +".jpg");
+				//comicCover = data3.data.results[0].images[0].path +".jpg";
+				var coverElem = result.find('.cover img');
+				coverElem.attr('src', data3.data.results[0].images[0].path+".jpg");
+			});
+		//}
+
 
 			return result;
 }
