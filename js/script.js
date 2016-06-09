@@ -12,13 +12,13 @@ $(document).ready(function(){
 		url = "http://gateway.marvel.com/v1/public/characters?name=daredevil";
 		$.getJSON(url,params,function(data){
 			//console.log(data.data);
-			console.log(data.data.results[0].id);
-			idNumber= data.data.results['id'];
+			console.log(data.data.results[0]);
+			idNumber= data.data.results[0];
 		});
 		url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 		$.getJSON(url2,params,function(data2){
 			console.log("Title "+data2.data.results['title']);
-			console.log("Title "+data2.data.results['description']);
+			console.log("Title "+data2.data.results[description]);
 		});
 });
 
