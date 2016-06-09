@@ -12,7 +12,7 @@ $(document).ready(function(){
 		url = "http://gateway.marvel.com/v1/public/characters?name=daredevil";
 		$.getJSON(url,params,function(data){
 			//console.log(data.data);
-			console.log(data.data.results[0]);
+			console.log(data.data.results[0].id);
 			idNumber= data.data.results['id'];
 		});
 		url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
