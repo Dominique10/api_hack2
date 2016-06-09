@@ -28,8 +28,12 @@ function getMarvelHero(){
 		console.log(data.data.results[0]);
 		console.log(data.data.results[0].id);
 		idNumber = data.data.results[0].id;
+
 		console.log(data.data.results[0].comics.items[0]);
-		comics = data.data.results[0].comics.items[0];
+		// comics = data.data.results[0].comics.items;
+		// for (var i =0,i < comics.length - 1; i++) {
+		// 	comics[i]
+		// }
 		getComics(idNumber);
 	});
 }
@@ -37,9 +41,16 @@ function getMarvelHero(){
 function getComics(idNumber){
 	url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 	$.getJSON(url2,params,function(data2){
-		console.log("Title "+data2.data.results[0].title);
-		console.log("Description "+data2.data.results[0].description);
-		console.log("resourceURL "+data2.data.results[0].resourceURL);
-		console.log("resourceURL "+data2.data.results[0].urls[0].url);
+		// console.log("Title "+data2.data.results[0].title);
+		// console.log("Description "+data2.data.results[0].description);
+		// console.log("resourceURL "+data2.data.results[0].resourceURL);
+		// console.log("resourceURL "+data2.data.results[0].urls[0].url);
+		for (var i =0,i < data2.data.results.length - 1; i++) {
+			//data2.data.results[i];
+			console.log("Title "+data2.data.results[i].title);
+			console.log("Description "+data2.data.results[i].description);
+			//console.log("resourceURL "+data2.data.results[i].resourceURL);
+			console.log("resourceURL "+data2.data.results[i].urls[0].url);
+		}
 	});
 }
