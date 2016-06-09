@@ -46,7 +46,7 @@ function getComics(idNumber){
 			console.log("Description "+comicsInformation[i].description);
 
 			console.log("resourceURL "+comicsInformation[i].urls[0].url);
-			comicCover = getComicCover(comicsInformation[i].id);
+			getComicCover(comicsInformation[i].id);
 
 			var result = $('.templates .title').clone();
 	
@@ -67,6 +67,6 @@ function getComics(idNumber){
 function getComicCover(comicCode){
 	url3= "http://gateway.marvel.com/v1/public/comics/"+comicCode;
 	$.getJSON(url3,params,function(data3){
-		return data3.data.results[0].images[0].path +".jpg";
+		comicCover = data3.data.results[0].images[0].path +".jpg";
 	});
 }
