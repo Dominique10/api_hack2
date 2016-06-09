@@ -1,5 +1,5 @@
 var userSelection;
-var idNumber;
+var idNumber=0;
 var comics;
 
 var params={
@@ -30,7 +30,7 @@ function getMarvelHero(){
 		idNumber = data.data.results[0].id;
 		console.log(data.data.results[0].comics.items[0]);
 		comics = data.data.results[0].comics.items[0];
-
+		return idNumber;
 	});
 }
 
