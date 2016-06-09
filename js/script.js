@@ -67,6 +67,7 @@ function getComics(idNumber){
 function getComicCover(comicCode){
 	url3= "http://gateway.marvel.com/v1/public/comics/"+comicCode;
 	$.getJSON(url3,params,function(data3){
+		console.log(data3.data.results[0]);
 		comicCover = data3.data.results[0].images[0].path +".jpg";
 	});
 }
