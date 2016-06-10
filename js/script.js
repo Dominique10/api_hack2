@@ -17,7 +17,6 @@ $(document).ready(function(){
 		$(".results").empty();
 		  $('.hero').on('click', '.searchresults', function(event){
 	    var userSearch=$(this).closest('.searchresults').text();
-	    console.log(userSearch);
 	    getMarvelHero(userSearch);
 	  })
 	});
@@ -55,7 +54,6 @@ function getHeroComicSelection(comicSelection,i){
 
 			var descriptionElem = result.find('.cover img');
 			descriptionElem.attr('title', comicSelection[i].description);
-			console.log(comicSelection[i].description);
 
 			url3= "http://gateway.marvel.com/v1/public/comics/"+comicSelection[i].id;
 			$.getJSON(url3,params,function(data3){
@@ -69,16 +67,13 @@ function searchHero(userHeroToSearch){
 	url = "http://gateway.marvel.com/v1/public/characters?nameStartsWith="+userHeroToSearch;
 	$.getJSON(url,params,function(data){
 		var heroName = data.data.results;
-		console.log(heroName);
 		for (var i = 0; i < heroName.length; i++) {
 			correctHero = heroName[i].name;
 			availableComics = heroName[i].comics.available;
-			console.log(correctHero+" : "+availableComics);
 			if (availableComics > 0) {
 				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
 			}
-			//else
-				//$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" No Comics Available!</div>");
+			
 		}
 	});
 }
