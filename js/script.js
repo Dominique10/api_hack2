@@ -71,7 +71,7 @@ function searchHero(userHeroToSearch){
 		for (var i = 0; i < heroName.length; i++) {
 			correctHero = heroName[i].name;
 			console.log(correctHero);
-			$('.hero').append("<div><a href="+correctHero+"></a>"+correctHero+"</div>");
+			$('.hero').append("<div><a href='#'></a>"+correctHero+"</div>");
 		}
 	});
 }
