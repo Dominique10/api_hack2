@@ -77,8 +77,8 @@ function searchHero(userHeroToSearch){
 			if (availableComics > 0) {
 				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
 			}
-			else
-				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" No Comics Available!</div>");
+			//else
+				//$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" No Comics Available!</div>");
 		}
 	});
 }
