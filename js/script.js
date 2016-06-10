@@ -69,7 +69,7 @@ function searchHero(userHeroToSearch){
 		var heroName = data.data.results;
 		console.log(heroName);
 		for (var i = 0; i < heroName.length; i++) {
-			correctHero = correctheroName[i].name;
+			correctHero = heroName[i].name;
 			console.log(correctHero);
 			$('.hero').append("<div><a href="+correctHero+"></a>"+correctHero+"</div>");
 		}
