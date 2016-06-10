@@ -47,7 +47,7 @@ function getHeroComicSelection(comicSelection,i){
 			titleElem.attr('href', comicSelection[i].urls[0].url);
 			titleElem.text(comicSelection[i].title);
 
-			var descriptionElem = result.find('.result title');
+			var descriptionElem = result.find('.title');
 			descriptionElem.attr('title', comicSelection[i].description);
 			console.log(comicSelection[i].description);
 
