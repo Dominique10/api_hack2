@@ -66,9 +66,11 @@ function searchHero(userHeroToSearch){
 	url = "http://gateway.marvel.com/v1/public/characters?nameStartsWith=="+userHeroToSearch;
 	$.getJSON(url,params,function(data){
 		var heroName = data.data.results;
+		console.log(heroName);
 		for (var i = 0; i < heroName; i++) {
 			correctHero = correctheroName[i].name;
-			$('.hero').append("<div><a href="+correctheroName+"></a>"+correctheroName+"</div>");
+			console.log(correctHero);
+			$('.hero').append("<div><a href="+correctHero+"></a>"+correctHero+"</div>");
 		}
 	});
 }
