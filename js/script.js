@@ -70,16 +70,16 @@ function searchHero(userHeroToSearch){
 		var heroName = data.data.results;
 		var heroCount = data.data.count;
 		if (heroCount > 0 ){
-		for (var i = 0; i < heroName.length; i++) {
-			correctHero = heroName[i].name;
-			availableComics = heroName[i].comics.available;
-			if (availableComics > 0) {
-				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
+			for (var i = 0; i < heroName.length; i++) {
+				correctHero = heroName[i].name;
+				availableComics = heroName[i].comics.available;
+				if (availableComics > 0) {
+					$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
+				}
 			}
 		}
 		else{
 			$('#myForm').append("<div class='error'>This characters seems to not be a member of the Marvel crew, Please try again</div>");
-		}	
 		}
 	});
 }
