@@ -16,7 +16,7 @@ $(document).ready(function(){
 		searchHero(input);
 		$(".results").empty();
 		  $('.hero').on('click', '.searchresults', function(event){
-	    var userSearch=$(this).closest('.searchresults').val();
+	    var userSearch=$(this).closest('.searchresults').text();
 	    console.log(userSearch);
 	    getMarvelHero(userSearch);
 	  })
