@@ -13,6 +13,7 @@ $(document).ready(function(){
 	$('#myForm').submit(function(e){
 		e.preventDefault();
 		input = $(this).find("input[name='userinput']").val();
+		searchHero(input);
 		$(".results").empty();
 		  $('.hero').on('click', function(event){
 	    input=$(this).closest('.hero').val();
