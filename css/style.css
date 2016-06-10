@@ -1,6 +1,12 @@
 body{
 	background-color:red;
+	font-family: 'Bree Serif', serif;
 }
+a {
+  font-weight: bold;
+}
+
+
 .container {
 	margin: 3em auto;
 	width: 600px;
