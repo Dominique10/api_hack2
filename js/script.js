@@ -15,7 +15,7 @@ $(document).ready(function(){
 $('#myForm').submit(function(e){
 	e.preventDefault();
 	input = $(this).find("input[name='userinput']").val();
-	console.log(input);
+	//console.log(input);
 	getMarvelHero(input);
 })
 
@@ -23,11 +23,11 @@ function getMarvelHero(hero){
 	url = "http://gateway.marvel.com/v1/public/characters?name="+hero;
 	$.getJSON(url,params,function(data){
 
-		console.log(data.data.results[0]);
-		console.log(data.data.results[0].id);
+		//console.log(data.data.results[0]);
+		//console.log(data.data.results[0].id);
 		idNumber = data.data.results[0].id;
 
-		console.log(data.data.results[0].comics.items[0]);
+		//console.log(data.data.results[0].comics.items[0]);
 
 		getComics(idNumber);
 	});
@@ -36,8 +36,8 @@ function getMarvelHero(hero){
 function getComics(idNumber){
 	url2= "http://gateway.marvel.com/v1/public/characters/"+idNumber+"/comics?";
 	$.getJSON(url2,params,function(data2){
-		 console.log("Title "+data2.data.results[0].title);
-		 console.log(data2.data.results);
+		 //console.log("Title "+data2.data.results[0].title);
+		 //console.log(data2.data.results);
 
 		comicsInformation = data2.data.results;
 		for (var i =0; i < comicsInformation.length; i++) {
@@ -76,10 +76,10 @@ function getComics(idNumber){
 // }
 
 function getHeroComicSelection(comicSelection,i){
-	console.log("Title "+comicSelection[i].title);
-			console.log("Description "+comicSelection[i].description);
+	//console.log("Title "+comicSelection[i].title);
+			//console.log("Description "+comicSelection[i].description);
 
-			console.log("resourceURL "+comicSelection[i].urls[0].url);
+			//console.log("resourceURL "+comicSelection[i].urls[0].url);
 			//getComicCover(comicSelection[i].id);
 
 			var result = $('.templates .title').clone();
@@ -97,7 +97,7 @@ function getHeroComicSelection(comicSelection,i){
 			//function getComicCover(comicCode){
 			url3= "http://gateway.marvel.com/v1/public/comics/"+comicSelection[i].id;
 			$.getJSON(url3,params,function(data3){
-				console.log(data3.data.results[0].images[0].path +".jpg");
+				//console.log(data3.data.results[0].images[0].path +".jpg");
 				//comicCover = data3.data.results[0].images[0].path +".jpg";
 				var coverElem = result.find('.cover img');
 				coverElem.attr('src', data3.data.results[0].images[0].path+".jpg");
