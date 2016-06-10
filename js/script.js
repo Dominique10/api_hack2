@@ -3,21 +3,24 @@ var idNumber=0;
 var comicsInformation;
 var input;
 var comicCover;
+var correctHero;
 var params={
 	apikey: '9dcb20f1185fa9fc6ead79c1ce2be593'
 			
 	};
 
 $(document).ready(function(){
-
-});
-
-$('#myForm').submit(function(e){
-	e.preventDefault();
-	input = $(this).find("input[name='userinput']").val();
-	$(".results").empty();
-	getMarvelHero(input);
+	$('#myForm').submit(function(e){
+		e.preventDefault();
+		input = $(this).find("input[name='userinput']").val();
+		$(".results").empty();
+		  $('.hero').on('click', function(event){
+	    input=$(this).closest('.hero').val();
+	    getMarvelHero(input);
+	  })
+	});
 })
+
 
 function getMarvelHero(hero){
 	url = "http://gateway.marvel.com/v1/public/characters?name="+hero;
@@ -57,4 +60,15 @@ function getHeroComicSelection(comicSelection,i){
 				coverElem.attr('src', data3.data.results[0].images[0].path+".jpg");
 			});
 			return result;
+}
+
+function searchHero(userHeroToSearch){
+	url = "http://gateway.marvel.com/v1/public/characters?nameStartsWith=="+userHeroToSearch;
+	$.getJSON(url,params,function(data){
+		var heroName = data.data.results;
+		for (var i = 0; i < heroName; i++) {
+			correctHero = correctheroName[i].name;
+			$('.hero').append("<div><a href="+correctheroName+"></a>"+correctheroName+"</div>");
+		}
+	});
 }
