@@ -13,6 +13,7 @@ $(document).ready(function(){
 	$('#myForm').submit(function(e){
 		e.preventDefault();
 		input = $(this).find("input[name='userinput']").val();
+		$(this).find("input[name='userinput']").val()='';
 		searchHero(input);
 		$(".results").empty();
 		$(".error").remove();
@@ -79,7 +80,7 @@ function searchHero(userHeroToSearch){
 			}
 		}
 		else{
-			$('#myForm').append("<div class='error'>This characters seems to not be a member of the Marvel crew, Please try again</div>");
+			$('#myForm').append("<div class='error'>This character seems to not be a member of the Marvel crew, Please try again</div>");
 		}
 	});
 }
