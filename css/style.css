@@ -118,3 +118,9 @@ input[type=submit]:hover {
     background-color: #f2f2f2;
     padding: 20px;
 }
+
+img:hover {
+    transition: all .25s linear;
+    border-style: outset;
+    border-color: lightgrey grey;
+}
