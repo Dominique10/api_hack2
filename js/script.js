@@ -15,7 +15,6 @@ $(document).ready(function(){
 		input = $(this).find("input[name='userinput']").val();
 		searchHero(input);
 		$(".results").empty();
-		$(".hero").empty();
 		  $('.hero').on('click', '.searchresults', function(event){
 	    var userSearch=$(this).closest('.searchresults').text();
 	    console.log(userSearch);
@@ -40,6 +39,7 @@ function getComics(idNumber){
 		for (var i =0; i < comicsInformation.length; i++) {
 			var heroDetails =getHeroComicSelection(comicsInformation,i);
 			$('.results').append(heroDetails);
+			$(".hero").empty();
 		};
 	});
 }
@@ -72,8 +72,9 @@ function searchHero(userHeroToSearch){
 		console.log(heroName);
 		for (var i = 0; i < heroName.length; i++) {
 			correctHero = heroName[i].name;
-			console.log(correctHero);
-			$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
+			availableComics = heroName[i].comics.available;
+			console.log(correctHero+" : "+availableComics);
+			$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" Comics: "+availableComics+"</div>");
 		}
 	});
 }
