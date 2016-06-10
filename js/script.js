@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('#myForm').submit(function(e){
 		e.preventDefault();
 		input = $(this).find("input[name='userinput']").val();
-		$(this).find("input[name='userinput']").val()='';
+		$(this).find("input[name='userinput']").val('');
 		searchHero(input);
 		$(".results").empty();
 		$(".error").remove();
