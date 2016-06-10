@@ -16,6 +16,7 @@ $('#myForm').submit(function(e){
 	e.preventDefault();
 	input = $(this).find("input[name='userinput']").val();
 	//console.log(input);
+	$(".results").empty();
 	getMarvelHero(input);
 })
 
@@ -89,7 +90,7 @@ function getHeroComicSelection(comicSelection,i){
 			titleElem.attr('href', comicSelection[i].urls[0].url);
 			titleElem.text(comicSelection[i].title);
 
-			var descriptionElem = result.find('.results');
+			var descriptionElem = result.find('.result title');
 			descriptionElem.attr('title',comicSelection[i].description);
 
 			
