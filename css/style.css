@@ -10,8 +10,17 @@ div a:hover {
   font-weight: bold;
   color:red;
 }
-
-
+.hero {
+  color: blue;
+  text-decoration: underline;
+}
+.searchresults{
+  margin: 1rem;
+}
+.searchresults:hover{
+  color:red;
+  cursor:pointer;
+}
 
 .container {
 	margin: 3em auto;

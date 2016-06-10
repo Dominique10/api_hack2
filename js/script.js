@@ -16,8 +16,9 @@ $(document).ready(function(){
 		searchHero(input);
 		$(".results").empty();
 		  $('.hero').on('click', function(event){
-	    input=$(this).closest('.hero').val();
-	    getMarvelHero(input);
+	    var userSearch=$(this).closest('.hero').val();
+	    console.log(userSearch);
+	    getMarvelHero(userSearch);
 	  })
 	});
 })
@@ -71,7 +72,7 @@ function searchHero(userHeroToSearch){
 		for (var i = 0; i < heroName.length; i++) {
 			correctHero = heroName[i].name;
 			console.log(correctHero);
-			$('.hero').append("<div><a href='#'></a>"+correctHero+"</div>");
+			$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
 		}
 	});
 }
