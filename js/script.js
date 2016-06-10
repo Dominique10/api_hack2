@@ -49,6 +49,7 @@ function getHeroComicSelection(comicSelection,i){
 
 			var descriptionElem = result.find('.result title');
 			descriptionElem.attr('title', comicSelection[i].description);
+			console.log(comicSelection[i].description);
 
 			url3= "http://gateway.marvel.com/v1/public/comics/"+comicSelection[i].id;
 			$.getJSON(url3,params,function(data3){
