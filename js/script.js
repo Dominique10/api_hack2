@@ -74,7 +74,11 @@ function searchHero(userHeroToSearch){
 			correctHero = heroName[i].name;
 			availableComics = heroName[i].comics.available;
 			console.log(correctHero+" : "+availableComics);
-			$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" Comics: "+availableComics+"</div>");
+			if (availableComics > 0) {
+				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+"</div>");
+			}
+			else
+				$('.hero').append("<div class='searchresults'><a href='#'></a>"+correctHero+" No Comics Available!</div>");
 		}
 	});
 }
