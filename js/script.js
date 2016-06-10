@@ -47,7 +47,7 @@ function getHeroComicSelection(comicSelection,i){
 			titleElem.attr('href', comicSelection[i].urls[0].url);
 			titleElem.text(comicSelection[i].title);
 
-			var descriptionElem = result.find('.results');
+			var descriptionElem = result.find('.result title');
 			descriptionElem.attr('title',comicSelection[i].description);
 
 			url3= "http://gateway.marvel.com/v1/public/comics/"+comicSelection[i].id;
