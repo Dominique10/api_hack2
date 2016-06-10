@@ -6,6 +6,10 @@ a:hover {
   font-weight: bold;
   color:white;
 }
+div a:hover {
+  font-weight: bold;
+  color:red;
+}
 
 
 
