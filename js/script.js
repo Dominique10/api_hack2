@@ -64,11 +64,11 @@ function getHeroComicSelection(comicSelection,i){
 }
 
 function searchHero(userHeroToSearch){
-	url = "http://gateway.marvel.com/v1/public/characters?nameStartsWith=="+userHeroToSearch;
+	url = "http://gateway.marvel.com/v1/public/characters?nameStartsWith="+userHeroToSearch;
 	$.getJSON(url,params,function(data){
 		var heroName = data.data.results;
 		console.log(heroName);
-		for (var i = 0; i < heroName; i++) {
+		for (var i = 0; i < heroName.length; i++) {
 			correctHero = correctheroName[i].name;
 			console.log(correctHero);
 			$('.hero').append("<div><a href="+correctHero+"></a>"+correctHero+"</div>");
