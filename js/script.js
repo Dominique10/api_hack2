@@ -10,6 +10,12 @@ var params={
 	};
 
 $(document).ready(function(){
+	$(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+        $("#wait").css("display", "none");
+     });
 	$('#myForm').submit(function(e){
 		e.preventDefault();
 		input = $(this).find("input[name='userinput']").val();
